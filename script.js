@@ -4,8 +4,8 @@ const listItems = document.querySelectorAll('li')
 const info = document.querySelector('#info')
 let countryList = [], countriesArr = [], output = '', output1 = '', data
 
-const xhttp = new XMLHttpRequest()
-xhttp.onload = function () {
+const xhr = new XMLHttpRequest()
+xhr.onload = function () {
   if (this.readyState == 4 && this.status == 200) {
     data = JSON.parse(this.responseText)
     data.forEach (e => {
@@ -15,12 +15,13 @@ xhttp.onload = function () {
     // document.querySelector("div").innerHTML = output
   }
 }
-xhttp.open("GET", "https://restcountries.eu/rest/v2/all", true)
-xhttp.send()
+xhr.open("GET", "https://restcountries.eu/rest/v2/all", true)
+xhr.send()
 
 input.addEventListener('input', (e)=>{
   if(e.target.value){
-    countryList = countriesArr.filter(cn => cn.toLowerCase().includes(e.target.value.toLowerCase()))
+    let reg = new RegExp(`^${e.target.value}`, 'gi')
+    countryList = countriesArr.filter(cn => cn.match(reg))
     countryList = countryList.map(cn => `<li class="list-group-item">${cn}</li>`)
     list.innerHTML = !countryList.length ? '' : countryList.join('')
   } else {
@@ -38,13 +39,13 @@ window.addEventListener('click', (e) => {
 
   if(e.target.tagName  == 'BUTTON'){
     data.forEach((i) => {
-      if(input.value && input.value == i.name){
+      if(input.value.toLowerCase() == i.name.toLowerCase()){
         console.log(i.borders);
         output1 = `<img src="${i.flag}" class='mb-2' width="80 alt="">`
         output1 += `<p>The population if ${i.name} is ${i.population}</p>`
         output1 += `<p>The capital is ${i.capital}</p>`
         output1 += `<p>The currency is ${i.currencies[0].name} ${i.currencies[0].symbol}</p>`
-        output1 += !getBorder(i.borders).length ? '' : getBorder(i.borders).join(' ')
+        output1 += !getBorder(i.borders).length ? '' :`Border countries are : ${getBorder(i.borders).join(' - ')}`
       }
     })
     info.innerHTML = output1
@@ -52,11 +53,10 @@ window.addEventListener('click', (e) => {
   }
 })
 
-
 const getBorder = (arr) => {
-  let bNames = []
+  let borders = []
   arr.forEach(ac => {
-    data.forEach(i => i.alpha3Code == ac && bNames.push(i.name))
+    data.forEach(i => i.alpha3Code == ac && borders.push(i.name))
   })
-  return bNames
+  return borders
 }
