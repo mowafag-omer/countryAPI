@@ -9,8 +9,8 @@
 * [JScode](#JScode)
 
 ## App
-display the information of the country we choose.
-User is able to click on the country of his choice then display a card with some information we receive through an other API call (http://restcountries.eu/#api-endpoints-name).ssigned yet to a Technology Watch. A single page in which we can add both students and Technology Watch.
+Display the information of the country we choose.
+User is able to click on the country of his choice then display a card with some information we receive through an other API call (http://restcountries.eu/#api-endpoints-name)
 <br><br>
 ## screenshots
 ![Image1](https://github.com/mowafag-omer/countryAPI/blob/master/screenshots/Capture4.PNG)
