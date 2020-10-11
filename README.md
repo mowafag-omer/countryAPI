@@ -43,7 +43,7 @@ xhr.send()
 ```
 - Filter our list of country
 ```js
-input.addEventListener('input', (e)=>{
+input.addEventListener('input', (e) => {
   if(e.target.value){
     let reg = new RegExp(`^${e.target.value}`, 'gi')
     countryList = countriesArr.filter(cn => cn.match(reg))
