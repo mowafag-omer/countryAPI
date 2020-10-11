@@ -12,9 +12,9 @@ Display the information of the country we choose. User is able to click on the c
 <br>
 
 ## screenshots
-![test Image](https://github.com/mowafag-omer/countryAPI/blob/master/screenshots/Capture4.PNG)
-![Image1](https://github.com/mowafag-omer/countryAPI/blob/master/screenshots/Capture3.PNG)
-![Image1](https://github.com/mowafag-omer/countryAPI/blob/master/screenshots/Capture5.PNG)
+![Image](https://github.com/mowafag-omer/countryAPI/blob/master/screenshots/Capture4.PNG)
+![Image](https://github.com/mowafag-omer/countryAPI/blob/master/screenshots/Capture3.PNG)
+![Image](https://github.com/mowafag-omer/countryAPI/blob/master/screenshots/Capture5.PNG)
 
 <br><br>
 ## JScode
