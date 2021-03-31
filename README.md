@@ -1,7 +1,7 @@
 # WhatAboutThisCountry
 ![](https://img.shields.io/badge/javaScript-gray?logo=javaScript)
 ![](https://img.shields.io/badge/HTML-gray?logo=HTML5)
-![](https://img.shields.io/badge/Bootstrap_vue-gray?logo=Bootstrap).
+![](https://img.shields.io/badge/Bootstrap_vue-gray?logo=Bootstrap)
 <br><br>
 Display the information of the country we choose. User is able to click on the country of his choice then display a card with some information we receive through an other API call (http://restcountries.eu/#api-endpoints-name)
 <br>
